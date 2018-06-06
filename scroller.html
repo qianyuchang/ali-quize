@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>Document</title>
+  <style>
+    body {
+      position: relative;
+    }
+    html, body{
+      height: 100%; 
+      margin: 0; 
+      padding: 0; 
+      font-family: 'Roboto', sans-serif; 
+      overflow: hidden; 
+      -webkit-tap-highlight-color: rgba(0,0,0,0);
+    }
+
+
+    .main {
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden;
+      overflow-y: scroll;
+      -webkit-overflow-scrolling: touch;
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      box-sizing: border-box;
+      contain: layout;
+      will-change: transform;
+    }
+
+    .main .seat-row ul {
+      width: 100%;
+      list-style-type: none;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .main .seat {
+      width: 50px;
+      height: 70px;
+      background-color: #ccc;
+      border: 1px solid #eee;
+      margin: 5px;
+    }
+
+    .invisible {
+      pointer-events: none;
+    }
+    .main .seat.choosed {
+      border-color: #ff803a;
+      background-color: #ff803a;
+    }
+
+
+    #templates {
+      display: none;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="templates">
+    <div class="seat-row" data-choosed="{{choosed}}" data-id="{{id}}">
+      <ul>
+        <li class="seat"></li>
+        <li class="seat"></li>
+        <li class="seat"></li>
+        <li class="seat"></li>
+        <li class="seat"></li>
+      </ul>
+    </div>
+    <div class="seat-row tombstone" data-choosed="{{choosed}}" data-id="{{id}}">
+      <ul>
+        <li class="seat">load</li>
+        <li class="seat">load</li>
+        <li class="seat">load</li>
+        <li class="seat">load</li>
+        <li class="seat">load</li>
+      </ul>
+    </div>
+  </div>
+  <div class="main"></div>
+  <script src="//rawgit.com/mrdoob/stats.js/master/build/stats.min.js"></script>
+  <script src="stat.js"></script>
+  <script src="scroller.js"></script>
+
+  <script>
+    
+  </script>
+</body>
+
+</html>
